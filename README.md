@@ -35,7 +35,7 @@ Si necesitas cambiar estos valores, edita la siguiente sección en el código:
 server = 'DESKTOP-NRBEVRF\SQLEXPRESS'
 database = 'ServiceStreet'
 username = 'sa'
-password = 'LaSalle2599'
+password = 'Passw0rd!'
 ```
 
 También asegúrate de que SQL Server acepte autenticación con usuario y contraseña y que el usuario tenga permisos suficientes para crear y modificar tablas.
