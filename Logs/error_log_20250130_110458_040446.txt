@@ -1,3 +1,0 @@
-2025-01-30 11:04:58.322544 - Archivo Incidentes.xlsx: 0 registros insertados, 3 registros duplicados, 1 registros omitidos.
-2025-01-30 11:04:59.013777 - Archivo Incidentes_Cerrados.xlsx: 0 registros insertados, 1824 registros duplicados, 1 registros omitidos.
-2025-01-30 11:04:59.025116 - Archivo Incidentes_Edit.xlsx: 0 registros insertados, 4 registros duplicados, 0 registros omitidos.
