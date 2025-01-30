@@ -27,7 +27,7 @@ Este script está diseñado para conectarse a un servidor SQL Server Express con
 - **Servidor:** `DESKTOP-NRBEVRF\SQLEXPRESS`
 - **Base de datos:** `ServiceStreet`
 - **Usuario:** `sa`
-- **Contraseña:** `LaSalle2599`
+- **Contraseña:** `Passw0rd!`
 
 Si necesitas cambiar estos valores, edita la siguiente sección en el código:
 
