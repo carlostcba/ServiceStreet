@@ -103,9 +103,17 @@ for filename in os.listdir(source_dir):
         duplicate_count = 0
         omitted_count = 0
 
-        # Verificar si el registro ya existe
+        # Verificar si el registro ya existe en las tres tablas
         check_sql = '''
-        SELECT COUNT(1) FROM IncidentGa WHERE incidentNumber = ?
+        SELECT COUNT(1)
+        FROM (
+            SELECT incidentNumber FROM IncidentGa
+            UNION
+            SELECT incidentNumber FROM IncidentOpen
+            UNION
+            SELECT incidentNumber FROM IncidentClosed
+        ) AS Combined
+        WHERE incidentNumber = ?
         '''
 
         # Inserción de registro
@@ -124,7 +132,7 @@ for filename in os.listdir(source_dir):
                 continue
             
             try:
-                # Verificar si el registro ya existe
+                # Verificar si el registro ya existe en cualquiera de las tres tablas
                 cursor.execute(check_sql, clean_text(row.get("Número")))
                 exists = cursor.fetchone()[0]
                 if exists:
