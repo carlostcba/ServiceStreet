@@ -8,7 +8,7 @@ from datetime import datetime
 server = 'DESKTOP-NRBEVRF\SQLEXPRESS'
 database = 'ServiceStreet'
 username = 'sa'
-password = 'LaSalle2599'
+password = 'Passw0rd!'
 
 conn_str = (
     f'DRIVER={{SQL Server}};'
