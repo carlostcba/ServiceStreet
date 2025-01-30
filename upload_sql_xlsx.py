@@ -102,7 +102,7 @@ for filename in os.listdir(source_dir):
         
         # Renombrar y mover el archivo procesado
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        new_filename = f"processed_{timestamp}.xlsx"
+        new_filename = f"processed_incident_{timestamp}.xlsx"
         shutil.move(file_path, os.path.join(processed_dir, new_filename))
         
         print(f"Archivo {filename} procesado y movido a {processed_dir} como {new_filename}")
