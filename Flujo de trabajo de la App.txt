@@ -1,0 +1,70 @@
+
+La app va a tener una base de datos MSSQL EXPRESS
+Un backend en NodeJs para las API
+Un frontend desarrollado con Ionic
+
+
+La base de datos debe estar preparada para la aplicacion ServiceDesk, cuyo inicio de sesion debe ser con google,
+que en resumen debe manejar la asignacion de tickets o incidentes para los tenicos en calle donde se deben 
+tener en cuenta SLA, Geolocalizacion al resolver o leer un ticket, cuando se asigno el ticket, cuando lo leyo
+el tecnico, cuando, donde y quien lo resolvio. cuando, donde y quien lo asigno o cerro. Saber si se 
+leyo o no el ticket asignado o cuando se leyo el ticket nuevo antes de ser asignado.
+
+
+El supervisor tiene la potestad de asignar, reabrirlos, cambiar el estado de los tickets o incidentes y 
+agregar notas. el sistema pregunta si desea confirmar los cambios.
+
+los estados pueden ser:
+
+1	Nuevo
+2	En curso
+3	En espera
+4	Resuelto
+5	Cerrado
+6	Cancelado
+
+
+El tecnico puede acceder a los tickets que le han asignado y puede agregar notas a dichos tickets.
+puede cambiar los estados a En espera o resuelto y siempre debe poner una nota a estos, donde el sistema pregunta
+si desea confirmar los cambios (validacion).
+
+tiene una pantalla que le muestra sus tickets y ahi tiene botones con las opciones de ver la descripcion del 
+ticket, resolver o poner en espera, agregar nota, ubicacion
+(boton que lo lleva a la aplicacion maps predeterminada en caso del celular y en web abre el link en un navegador)
+
+el tecnico puede ver sus tickets asignados que esten "en curso" y en el caso de los "resueltos" solo los de ese dia.
+el tenico tiene que recibir una notificacion cuando de le asigna un tiket y guardar la geolocalizacion de el momento
+en que recibio el ticket lo que dispara un SLA.
+
+
+La aplicacion debe poder hacer reportes de incidentes, asignaciones, ver las rutas del tenico por dia. y alguna otra
+sugerencia que puedas hacer con respecto a la app. en lo posible debe ser lo mas standart posible.
+
+dato que actualmente la importacion es con un excel, pero tambien se deberia poder hacer desde la misma app web.
+en modo admin o el perfil oportuno. Tener API que permitan la interaccion con otras Aplicaciones de terceros.
+
+
+
+
+Inicio de sesion a travez de la Cuenta de Google con usuarios previamente habilitados segun su email
+utilizando la tabla (SocialMediaUsers)
+
+
+Si el login es correcto pasa a la pantalla principal donde se le habilitaran funciones segun
+su perfil (admin, supervisor, tecnico, usuario)
+
+Esta pantalla principal tendra la funcion Incidentes, Usuarios, Rutas, Sucursales, Reportes, Configuracion.
+
+El perfil admin tiene acceso a ver todo.
+
+Los incidentes estan compuestos tablas "IncidentGa" (que se deberia llamar IncidentNew) que son los casos
+nuevos que han sido importados a la DB por el programa Python upload_sql_xlsx.py los cuales deben ser 
+asignados a los tecnicos, al llegar deben hacer sonar algun tipo de alarma despues de un cierto tiempo 
+avisandole al admin o supervisor para evitar no imcumplir el SLA.
+
+
+IncidentClosed
+
+IncidentOpen
+
+
